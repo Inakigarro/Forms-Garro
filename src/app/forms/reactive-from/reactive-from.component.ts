@@ -56,7 +56,9 @@ export class ReactiveFromComponent {
       console.log(this.form.value);
       this.form.reset();
     } else {
-      console.error('Esto no funciona');
+      alert(`
+      Los datos ingresados no son validos.
+      Intente nuevamente.`);
     }
   }
 }
