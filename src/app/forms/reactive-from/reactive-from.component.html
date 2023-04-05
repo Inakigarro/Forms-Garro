@@ -1,0 +1,103 @@
+<div class="formContainer">
+    <h2>Nuevo Usuario</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <div class="formFieldRow">
+            <div class="formField">
+                <label for="firstNameInput" class="formField__text__label">Nombre: </label>
+                <input required formControlName="firstName" id="firstNameInput" class="formField__text__input"
+                    type="text">
+                <div *ngIf="firstNameControl.invalid && (firstNameControl.touched || firstNameControl.dirty)">
+                    <div *ngIf="firstNameControl.errors?.['required']" class="inputError">
+                        Este campo es requerido.
+                    </div>
+                    <div *ngIf="firstNameControl.errors?.['maxlength']" class="inputError">
+                        El nombre debe tener menos de 70 caracteres.
+                    </div>
+                </div>
+            </div>
+            <div class="formField">
+                <label for="lastNameInput" class="formField__text__label">Apellido: </label>
+                <input required formControlName="lastName" id="lastNameInput" class="formField__text__input"
+                    type="text">
+                <div *ngIf="lastNameControl.invalid && (lastNameControl.touched || lastNameControl.dirty)">
+                    <div *ngIf="lastNameControl.errors?.['required']" class="inputError">
+                        Este campo es requerido.
+                    </div>
+                    <div *ngIf="lastNameControl.errors?.['maxlength']" class="inputError">
+                        El apellido debe tener menos de 70 caracteres.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="formFieldRow">
+            <div class="formField">
+                <label for="emailInput" class="formField__email__label">Email: </label>
+                <input required formControlName="email" type="email" id="emailInput" class="formField__email__input">
+                <div *ngIf="emailControl.invalid && (emailControl.touched || emailControl.dirty)">
+                    <div *ngIf="emailControl.errors?.['required']" class="inputError">
+                        Este campo es requerido.
+                    </div>
+                    <div *ngIf="emailControl.errors?.['email']" class="inputError">
+                        Debe ingresar un correo valido para continuar.
+                    </div>
+                    <div *ngIf="emailControl.errors?.['maxlength']" class="inputError">
+                        El correo debe tener menos de 150 caracteres.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="formFieldRow">
+            <div class="formField">
+                <label for="countryInput" class="formFiel__text__label">Pais: </label>
+                <input required formControlName="country" type="text" id="countryInput" class="formField__text__input">
+                <div *ngIf="countryControl.invalid && (countryControl.touched || countryControl.dirty)">
+                    <div *ngIf="countryControl.errors?.['required']" class="inputError">
+                        Este campo es requerido.
+                    </div>
+                    <div *ngIf="countryControl.errors?.['maxlength']" class="inputError">
+                        El nombre del pais debe tener menos de 70 caracteres.
+                    </div>
+                </div>
+            </div>
+            <div class="formField">
+                <label for="cityInput" class="formField__text__label">Ciudad: </label>
+                <input required formControlName="city" type="text" id="cityInput" class="formField__text__input">
+                <div *ngIf="cityControl.invalid && (cityControl.touched || cityControl.dirty)">
+                    <div *ngIf="cityControl.errors?.['required']" class="inputError">
+                        Este campo es requerido.
+                    </div>
+                    <div *ngIf="cityControl.errors?.['maxlength']" class="inputError">
+                        El nombre de la ciudad debe tener menos de 150 caracteres.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="formFieldRow">
+            <div class="formField">
+                <label for="addressInput" class="formField__text__label">Direccion: </label>
+                <input required formControlName="address" type="text" id="addressInput" class="formField__text__input">
+                <div *ngIf="addressControl.invalid && (addressControl.touched || addressControl.dirty)">
+                    <div *ngIf="addressControl.errors?.['required']" class="inputError">
+                        Este campo es requerido.
+                    </div>
+                    <div *ngIf="addressControl.errors?.['maxlength']" class="inputError">
+                        La direccion debe tener menos de 150 caracteres.
+                    </div>
+                </div>
+            </div>
+            <div class="formField">
+                <label for="phoneInput" class="formField__text__label">Telefono: </label>
+                <input required formControlName="phone" type="text" id="phoneInput" class="formField__text__input">
+                <div *ngIf="phoneControl.invalid && (phoneControl.touched || phoneControl.dirty)">
+                    <div *ngIf="phoneControl.errors?.['required']" class="inputError">
+                        Este campo es requerido.
+                    </div>
+                    <div *ngIf="phoneControl.errors?.['maxlength']" class="inputError">
+                        El telefono debe tener menos de 150 caracteres.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+</div>
